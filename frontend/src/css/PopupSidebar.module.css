@@ -1,0 +1,41 @@
+.popupSidebar {
+  width: 140px;
+  background-color: #f5f7fa;
+  border-right: 1px solid #ddd;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.tab {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #555;
+  font-size: 0.9rem;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #f0f3f8;
+}
+
+.tab.active {
+  background-color: #126ffe;
+  color: #fff;
+  border-left: 4px solid #0e5ed1;
+}
+
+.tab.active .icon {
+  color: #fff;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #999;
+}

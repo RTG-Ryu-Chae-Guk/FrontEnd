@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: myproject
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/diary
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+coolsms:
+  api:
+    key: NCSRH6Q6ILREH2QF
+    secret: C15D2OCMIHBW8UQ2ARMP2FBDAH8D0ZYX

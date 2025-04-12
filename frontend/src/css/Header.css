@@ -1,0 +1,45 @@
+.pc-home-header {
+  padding: 2rem 4rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pc-home-logo {
+  width: 9rem;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .pc-home-logo {
+    width: 6rem;
+  }
+}
+
+.pc-home-nav a {
+  position: relative;
+  margin-left: 2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.pc-home-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.pc-home-nav a:hover::after {
+  transform: scaleX(1);
+}

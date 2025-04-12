@@ -1,0 +1,171 @@
+/* ✅ 전체 화면을 모바일 크기에 맞춤 */
+.container {
+    width: 100%;
+    max-width: 480px; /* 모바일 크기 기준 */
+    height: 100vh; /* 화면 높이를 꽉 채움 */
+    margin: 0 auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto; /* 스크롤 방지 */
+}
+
+body {
+    background-color: #f2f2f2;; /* 원하는 배경색으로 변경 */
+}
+
+/* ✅ 스크롤 가능한 리스트 */
+.list-container {
+    flex: 1; /* 리스트 부분이 자동으로 늘어남 */
+    overflow-y: auto; /* 내부 스크롤 활성화 */
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+/* ✅ 아이템 스타일 */
+.item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* ✅ 이미지 감싸는 div 스타일 */
+.item-image-container {
+    width: 150px; /* ✅ 이미지 크기 */
+    height: 150px;
+    background-color: #f2f2f2; /* ✅ 배경색 */
+    border-radius: 10px; /* ✅ 둥근 모서리 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* ✅ 이미지가 벗어나지 않도록 설정 */
+    margin-right: 30px;
+    flex-shrink: 0; /* ✅ 이미지 크기 유지 */
+}
+
+/* ✅ 이미지 스타일 */
+.item img {
+    max-width: 90%; /* ✅ 이미지 크기 조정 */
+    max-height: 90%;
+    object-fit: contain; /* ✅ 이미지 비율 유지 */
+}
+
+/* ✅ 텍스트 정보 스타일 */
+.item-info {
+    max-width: 60%; /* ✅ 텍스트 영역이 너무 커지지 않도록 제한 */
+    flex-grow: 1; /* ✅ 남은 공간을 차지하도록 설정 */
+}
+
+.item-info h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.item-info h3 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    flex: 1;
+    color: #942f2f;
+    margin: 0;
+}
+
+.item-info p {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #787878;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    word-wrap: break-word; /* ✅ 긴 텍스트 자동 줄바꿈 */
+    white-space: normal;
+    font-family: 'Montserrat-Bold';
+}
+.calendar-wrapper {
+  padding: 0 0px;
+}
+.price {
+    font-size: 1.0rem;
+    color: #787878;
+    justify-content: center;
+    width:100%;
+}
+
+/* 📌 더 작은 모바일 (최대 480px 이하) */
+@media screen and (max-width: 480px) {
+    .container {
+        height: 100vh;
+        max-width: 480px; /* ✅ 모바일에서는 480px */
+    }
+
+    .item {
+        padding: 8px;
+    }
+
+    .item-image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .item img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .item-info h2 {
+        font-size: 1.0rem;
+    }
+
+    .item-info h3{
+        font-size: 1.0rem;
+        font-weight: 900;
+        flex: 1;
+        color: #942f2f;
+    }
+
+    .price {
+        font-size: 1.0rem;
+        item-align: right;
+    }
+
+    .item-info p {
+        font-size: 0.6rem;
+        font-weight: 900;
+        color: #787878;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        word-wrap: break-word; /* ✅ 긴 텍스트 자동 줄바꿈 */
+        white-space: normal;
+        font-family: 'Montserrat-Bold';
+    }
+
+
+}
+
+
+@font-face {
+    font-family: 'BodoniModa';
+    src: url('./assets/fonts/BodoniModa-ExtraBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hahmlet';
+    src: url('./assets/fonts/Hahmlet-Regular.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
