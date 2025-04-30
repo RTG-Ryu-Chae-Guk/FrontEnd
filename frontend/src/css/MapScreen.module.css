@@ -136,6 +136,7 @@
 .overlayMenu ul li {
   margin-bottom: 0.3rem;
 }
+
 .popupCard {
   position: absolute;
   top: 5%;
@@ -251,6 +252,7 @@
   font-weight: bold;
   color: #126ffe;
 }
+
 .overlayContainer {
   display: flex;
   width: 600px;
@@ -266,3 +268,10 @@
   flex: 1;
   font-family: 'Noto Sans KR', sans-serif;
 }
+.map :global(polygon) {
+  transition: fill-opacity 0.3s ease, stroke 0.3s ease;
+}
+.dark-mask {
+  transition: clip-path 0.3s ease;
+}
+

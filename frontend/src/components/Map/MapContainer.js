@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../css/MapScreen.module.css';
-import OverlayCard from './OverlayCard';
 import PopupCard from './PopupCard';
 
-const MapContainer = ({ onMarkerClick, selectedRegion }) => {
+const MapContainer = () => {
   const mapRef = useRef(null);
+  const [selectedRegion, setSelectedRegion] = useState(null);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -16,30 +16,51 @@ const MapContainer = ({ onMarkerClick, selectedRegion }) => {
       window.kakao.maps.load(() => {
         const map = new window.kakao.maps.Map(mapRef.current, {
           center: new window.kakao.maps.LatLng(37.5665, 126.9780),
-          level: 3,
+          level: 9,
         });
 
-        const marker = new window.kakao.maps.Marker({
-          position: new window.kakao.maps.LatLng(37.5665, 126.9780),
-        });
-        marker.setMap(map);
+        fetch('/data/seoul_area_boundaries_116.json')
+          .then((res) => res.json())
+          .then((data) => {
+            Object.entries(data).forEach(([name, coords]) => {
+              const path = coords.map(([lat, lng]) => new window.kakao.maps.LatLng(lat, lng));
 
-        window.kakao.maps.event.addListener(marker, 'click', () => {
-          onMarkerClick({
-            name: '명동',
-            category: '불고기전문',
-            percentage: '55.45%',
-            description: '직장오피스가 26%, 주거상업 15%, 기타지역 2%',
+              const polygon = new window.kakao.maps.Polygon({
+                path,
+                strokeWeight: 2,
+                strokeColor: '#126ffe',
+                strokeOpacity: 0.8,
+                fillColor: '#A7C7FF',
+                fillOpacity: 0.3,
+                map: map,
+              });
+
+              window.kakao.maps.event.addListener(polygon, 'click', () => {
+                fetch(`/api/city/by-name/${encodeURIComponent(name)}`)
+                  .then((res) => res.json())
+                  .then((data) => {
+                    setSelectedRegion({
+                      name: data.area_nm,
+                      category: `${data.rsb_lrg_ctgr} > ${data.rsb_mid_ctgr}`,
+                      percentage: `${data.rsb_mct_cnt}개 점포`,
+                      description: data.area_congest_msg,
+                      stats: data,
+                    });
+                  })
+                  .catch(() => {
+                    setSelectedRegion({ name, category: '정보 없음', percentage: '-', description: '해당 지역 데이터 요청 실패' });
+                  });
+              });
+            });
           });
-        });
       });
     };
-  }, [onMarkerClick]);
+  }, []);
 
   return (
     <div className={styles.map}>
       <div ref={mapRef} className={styles.map}></div>
-      {selectedRegion && <PopupCard region={selectedRegion} onClose={() => onMarkerClick(null)} />}
+      {selectedRegion && <PopupCard region={selectedRegion} onClose={() => setSelectedRegion(null)} />}
     </div>
   );
 };

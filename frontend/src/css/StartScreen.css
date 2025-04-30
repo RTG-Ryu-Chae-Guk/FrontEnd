@@ -40,7 +40,7 @@
   background-color: #126ffe;
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.5s;
 }
 
 .select-btn:hover {
