@@ -1,0 +1,89 @@
+.newsPageWrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #1A4FCE, #5599F1);
+  display: flex;
+  flex-direction: column; /* 핵심 */
+  padding-bottom: 3rem;
+}
+
+.newsPage {
+ margin: 5rem auto 0; /* ✅ 수평 가운데 정렬 */
+  width: 100%;
+  max-width: 960px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  color: #1f1f1f;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(to right, #ffffff, #d6e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.newsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.newsItem {
+  background: #ffffffee;
+  padding: 1.6rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.newsItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.newsLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.newsLink h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #1A4FCE;
+}
+
+.desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+  text-align: right;
+  display: block;
+}

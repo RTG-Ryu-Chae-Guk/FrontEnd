@@ -36,7 +36,7 @@ const MapContainer = () => {
               });
 
               window.kakao.maps.event.addListener(polygon, 'click', () => {
-                fetch(`/api/city/by-name/${encodeURIComponent(name)}`)
+                fetch(`/api/static/name/${encodeURIComponent(name)}`)
                   .then((res) => res.json())
                   .then((data) => {
                     setSelectedRegion({

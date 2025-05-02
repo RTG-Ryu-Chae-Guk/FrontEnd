@@ -140,9 +140,9 @@
 .popupCard {
   position: absolute;
   top: 5%;
-  left: 5%;
+  left: 30%;
   width: 800px;
-  height: 420px;
+  height: 720px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
