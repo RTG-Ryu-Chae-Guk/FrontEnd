@@ -1,0 +1,707 @@
+{
+  "고궁·문화유산": [
+    {
+      "AREA_CD": "POI008",
+      "AREA_NM": "경복궁",
+      "ENG_NM": "Gyeongbokgung Palace",
+      "trdarCd": "3120002"
+    },
+    {
+      "AREA_CD": "POI009",
+      "AREA_NM": "광화문·덕수궁",
+      "ENG_NM": "Gwanghwamun & Deoksugung Palace",
+      "trdarCd": "3120003"
+    },
+    {
+      "AREA_CD": "POI010",
+      "AREA_NM": "보신각",
+      "ENG_NM": "Bosingak",
+      "trdarCd": "3001494"
+    },
+    {
+      "AREA_CD": "POI011",
+      "AREA_NM": "서울 암사동 유적",
+      "ENG_NM": "Amsa Prehistoric Settlement Site",
+      "trdarCd": "3111066"
+    },
+    {
+      "AREA_CD": "POI012",
+      "AREA_NM": "창덕궁·종묘",
+      "ENG_NM": "Changdeokgung Palace & Jongmyo Shrine",
+      "trdarCd": "3110019"
+    }
+  ],
+  "공원": [
+    {
+      "AREA_CD": "POI085",
+      "AREA_NM": "강서한강공원",
+      "ENG_NM": "Gangseo Hangang Park",
+      "trdarCd": "3110630"
+    },
+    {
+      "AREA_CD": "POI086",
+      "AREA_NM": "고척돔",
+      "ENG_NM": "Gocheok Dome",
+      "trdarCd": "3130227"
+    },
+    {
+      "AREA_CD": "POI087",
+      "AREA_NM": "광나루한강공원",
+      "ENG_NM": "Gwangnaru Hangang Park",
+      "trdarCd": "3110179"
+    },
+    {
+      "AREA_CD": "POI088",
+      "AREA_NM": "광화문광장",
+      "ENG_NM": "Gwanghwamun Square",
+      "trdarCd": "3120003"
+    },
+    {
+      "AREA_CD": "POI089",
+      "AREA_NM": "국립중앙박물관·용산가족공원",
+      "ENG_NM": "The National Museum of Korea·Yongsan Family Park",
+      "trdarCd": "3110078"
+    },
+    {
+      "AREA_CD": "POI090",
+      "AREA_NM": "난지한강공원",
+      "ENG_NM": "Nanji Hangang Park",
+      "trdarCd": "3130183"
+    },
+    {
+      "AREA_CD": "POI091",
+      "AREA_NM": "남산공원",
+      "ENG_NM": "Namsan Park",
+      "trdarCd": "3110041"
+    },
+    {
+      "AREA_CD": "POI092",
+      "AREA_NM": "노들섬",
+      "ENG_NM": "Nodeul island",
+      "trdarCd": "3110059"
+    },
+    {
+      "AREA_CD": "POI093",
+      "AREA_NM": "뚝섬한강공원",
+      "ENG_NM": "Ttukseom Hangang Park",
+      "trdarCd": "3110143"
+    },
+    {
+      "AREA_CD": "POI094",
+      "AREA_NM": "망원한강공원",
+      "ENG_NM": "Mangwon Hangang Park",
+      "trdarCd": "3120100"
+    },
+    {
+      "AREA_CD": "POI095",
+      "AREA_NM": "반포한강공원",
+      "ENG_NM": "Banpo Hangang Park",
+      "trdarCd": "3120167"
+    },
+    {
+      "AREA_CD": "POI096",
+      "AREA_NM": "북서울꿈의숲",
+      "ENG_NM": "Dream Forest",
+      "trdarCd": "3110377"
+    },
+    {
+      "AREA_CD": "POI097",
+      "AREA_NM": "불광천",
+      "ENG_NM": "Bulgwangcheon River",
+      "trdarCd": "3120098"
+    },
+    {
+      "AREA_CD": "POI098",
+      "AREA_NM": "서리풀공원·몽마르뜨공원",
+      "ENG_NM": "Seoripul Park·Montmartre Park",
+      "trdarCd": "3110924"
+    },
+    {
+      "AREA_CD": "POI099",
+      "AREA_NM": "서울광장",
+      "ENG_NM": "Seoul Plaza",
+      "trdarCd": "3120020"
+    },
+    {
+      "AREA_CD": "POI100",
+      "AREA_NM": "서울대공원",
+      "ENG_NM": "Seoul Grand Park",
+      "trdarCd": "3110947"
+    },
+    {
+      "AREA_CD": "POI101",
+      "AREA_NM": "서울숲공원",
+      "ENG_NM": "Seoul Forest",
+      "trdarCd": "3110120"
+    },
+    {
+      "AREA_CD": "POI102",
+      "AREA_NM": "아차산",
+      "ENG_NM": "Achasan",
+      "trdarCd": "3120057"
+    },
+    {
+      "AREA_CD": "POI103",
+      "AREA_NM": "양화한강공원",
+      "ENG_NM": "Yanghwa Hangang Park",
+      "trdarCd": "3110546"
+    },
+    {
+      "AREA_CD": "POI104",
+      "AREA_NM": "어린이대공원",
+      "ENG_NM": "Children's Grand Park",
+      "trdarCd": "3120054"
+    },
+    {
+      "AREA_CD": "POI105",
+      "AREA_NM": "여의도한강공원",
+      "ENG_NM": "Yeouido Hangang Park",
+      "trdarCd": "3120149"
+    },
+    {
+      "AREA_CD": "POI106",
+      "AREA_NM": "월드컵공원",
+      "ENG_NM": "World Cup Park",
+      "trdarCd": "3120099"
+    },
+    {
+      "AREA_CD": "POI107",
+      "AREA_NM": "응봉산",
+      "ENG_NM": "Eungbongsan",
+      "trdarCd": "3110113"
+    },
+    {
+      "AREA_CD": "POI108",
+      "AREA_NM": "이촌한강공원",
+      "ENG_NM": "Ichon Hangang Park",
+      "trdarCd": "3130058"
+    },
+    {
+      "AREA_CD": "POI109",
+      "AREA_NM": "잠실종합운동장",
+      "ENG_NM": "Jamsil (Seoul) Sports Complex",
+      "trdarCd": "3120227"
+    },
+    {
+      "AREA_CD": "POI110",
+      "AREA_NM": "잠실한강공원",
+      "ENG_NM": "Jamsil Hangang Park",
+      "trdarCd": "3111011"
+    },
+    {
+      "AREA_CD": "POI111",
+      "AREA_NM": "잠원한강공원",
+      "ENG_NM": "Jamwon Hangang Park",
+      "trdarCd": "3110927"
+    },
+    {
+      "AREA_CD": "POI112",
+      "AREA_NM": "청계산",
+      "ENG_NM": "Cheonggyesan",
+      "trdarCd": "3110947"
+    },
+    {
+      "AREA_CD": "POI113",
+      "AREA_NM": "청와대",
+      "ENG_NM": "Cheongwadae",
+      "trdarCd": "3110015"
+    }
+  ],
+  "관광특구": [
+    {
+      "AREA_CD": "POI001",
+      "AREA_NM": "강남 MICE 관광특구",
+      "ENG_NM": "Gangnam MICE Special Tourist Zone",
+      "trdarCd": "3001496"
+    },
+    {
+      "AREA_CD": "POI002",
+      "AREA_NM": "동대문 관광특구",
+      "ENG_NM": "Dongdaemun Fashion Town Special Tourist Zone",
+      "trdarCd": "3001493"
+    },
+    {
+      "AREA_CD": "POI003",
+      "AREA_NM": "명동 관광특구",
+      "ENG_NM": "Myeong-dong Namdaemun Bukchang-dong Da-dong Mugyo-dong Special Tourist Zone",
+      "trdarCd": "3001492"
+    },
+    {
+      "AREA_CD": "POI004",
+      "AREA_NM": "이태원 관광특구",
+      "ENG_NM": "Itaewon Special Tourist Zone",
+      "trdarCd": "3001491"
+    },
+    {
+      "AREA_CD": "POI005",
+      "AREA_NM": "잠실 관광특구",
+      "ENG_NM": "Jamsil Special Tourist Zone",
+      "trdarCd": "3001495"
+    },
+    {
+      "AREA_CD": "POI006",
+      "AREA_NM": "종로·청계 관광특구",
+      "ENG_NM": "Jongno Cheonggye Special Toruist Zone",
+      "trdarCd": "3001494"
+    },
+    {
+      "AREA_CD": "POI007",
+      "AREA_NM": "홍대 관광특구",
+      "ENG_NM": "HongDae Culture & Arts Special Tourist Zone",
+      "trdarCd": "3130191"
+    }
+  ],
+  "발달상권": [
+    {
+      "AREA_CD": "POI057",
+      "AREA_NM": "4·19 카페거리",
+      "ENG_NM": "4·19 Cafe street",
+      "trdarCd": "3110339"
+    },
+    {
+      "AREA_CD": "POI058",
+      "AREA_NM": "가락시장",
+      "ENG_NM": "Garak Market",
+      "trdarCd": "3120231"
+    },
+    {
+      "AREA_CD": "POI059",
+      "AREA_NM": "가로수길",
+      "ENG_NM": "Garosu-gil",
+      "trdarCd": "3120186"
+    },
+    {
+      "AREA_CD": "POI060",
+      "AREA_NM": "광장(전통)시장",
+      "ENG_NM": "Gwangjang(Traditional) Market",
+      "trdarCd": "3130007"
+    },
+    {
+      "AREA_CD": "POI061",
+      "AREA_NM": "김포공항",
+      "ENG_NM": "Gimpo Airport",
+      "trdarCd": "3120115"
+    },
+    {
+      "AREA_CD": "POI062",
+      "AREA_NM": "낙산공원·이화마을",
+      "ENG_NM": "Naksan Park·Ihwa Village",
+      "trdarCd": "3110028"
+    },
+    {
+      "AREA_CD": "POI063",
+      "AREA_NM": "노량진",
+      "ENG_NM": "Noryangjin",
+      "trdarCd": "3120153"
+    },
+    {
+      "AREA_CD": "POI064",
+      "AREA_NM": "덕수궁길·정동길",
+      "ENG_NM": "Deoksugung-gil·Jeongdong-gil",
+      "trdarCd": "3120025"
+    },
+    {
+      "AREA_CD": "POI065",
+      "AREA_NM": "방배역 먹자골목",
+      "ENG_NM": "Bangbae food alley",
+      "trdarCd": "3120166"
+    },
+    {
+      "AREA_CD": "POI066",
+      "AREA_NM": "북촌한옥마을",
+      "ENG_NM": "Bukchon Hanok Village",
+      "trdarCd": "3120007"
+    },
+    {
+      "AREA_CD": "POI067",
+      "AREA_NM": "서촌",
+      "ENG_NM": "Seochon",
+      "trdarCd": "3120002"
+    },
+    {
+      "AREA_CD": "POI068",
+      "AREA_NM": "성수카페거리",
+      "ENG_NM": "Seongsu Cafe Street",
+      "trdarCd": "3110131"
+    },
+    {
+      "AREA_CD": "POI069",
+      "AREA_NM": "수유리 먹자골목",
+      "ENG_NM": "Suyuri food alley",
+      "trdarCd": "3110359"
+    },
+    {
+      "AREA_CD": "POI070",
+      "AREA_NM": "쌍문동 맛집거리",
+      "ENG_NM": "Ssangmun-dong restaurant street",
+      "trdarCd": "3130146"
+    },
+    {
+      "AREA_CD": "POI071",
+      "AREA_NM": "압구정로데오거리",
+      "ENG_NM": "Apgujeong Rodeo Street",
+      "trdarCd": "3120202"
+    },
+    {
+      "AREA_CD": "POI072",
+      "AREA_NM": "여의도",
+      "ENG_NM": "Yeouido",
+      "trdarCd": "3120149"
+    },
+    {
+      "AREA_CD": "POI073",
+      "AREA_NM": "연남동",
+      "ENG_NM": "Yeonnam-dong",
+      "trdarCd": "3120104"
+    },
+    {
+      "AREA_CD": "POI074",
+      "AREA_NM": "영등포 타임스퀘어",
+      "ENG_NM": "Yeongdeungpo Time square",
+      "trdarCd": "3130248"
+    },
+    {
+      "AREA_CD": "POI075",
+      "AREA_NM": "외대앞",
+      "ENG_NM": "Hankuk University of Foreign Studies",
+      "trdarCd": "3110220"
+    },
+    {
+      "AREA_CD": "POI076",
+      "AREA_NM": "용리단길",
+      "ENG_NM": "Yongnidan-gil",
+      "trdarCd": "3120040"
+    },
+    {
+      "AREA_CD": "POI077",
+      "AREA_NM": "이태원 앤틱가구거리",
+      "ENG_NM": "Itaewon Antiques street",
+      "trdarCd": "3110087"
+    },
+    {
+      "AREA_CD": "POI078",
+      "AREA_NM": "인사동",
+      "ENG_NM": "Insa-dong",
+      "trdarCd": "3120008"
+    },
+    {
+      "AREA_CD": "POI079",
+      "AREA_NM": "창동 신경제 중심지",
+      "ENG_NM": "Changdong New Economic Center",
+      "trdarCd": "3130153"
+    },
+    {
+      "AREA_CD": "POI080",
+      "AREA_NM": "청담동 명품거리",
+      "ENG_NM": "Cheongdam-dong Luxury Fashion street",
+      "trdarCd": "3120208"
+    },
+    {
+      "AREA_CD": "POI081",
+      "AREA_NM": "청량리 제기동 일대 전통시장",
+      "ENG_NM": "Traditional market in Cheongnyangni Jegi-dong ",
+      "trdarCd": "3130090"
+    },
+    {
+      "AREA_CD": "POI082",
+      "AREA_NM": "해방촌·경리단길",
+      "ENG_NM": "Haebangchon·Gyeongnidan-gil",
+      "trdarCd": "3110080"
+    },
+    {
+      "AREA_CD": "POI083",
+      "AREA_NM": "DDP(동대문디자인플라자)",
+      "ENG_NM": "DDP(Dongdaemun Design Plaza)",
+      "trdarCd": "3001493"
+    },
+    {
+      "AREA_CD": "POI084",
+      "AREA_NM": "DMC(디지털미디어시티)",
+      "ENG_NM": "DMC(Digital Media City)",
+      "trdarCd": "3120098"
+    },
+    {
+      "AREA_CD": "POI114",
+      "AREA_NM": "북창동 먹자골목",
+      "ENG_NM": "Bukchang-dong food alley",
+      "trdarCd": "3120022"
+    },
+    {
+      "AREA_CD": "POI115",
+      "AREA_NM": "남대문시장",
+      "ENG_NM": "Namdaemun Market",
+      "trdarCd": "3130024"
+    },
+    {
+      "AREA_CD": "POI116",
+      "AREA_NM": "익선동",
+      "ENG_NM": "Ikseon-dong",
+      "trdarCd": "3120014"
+    }
+  ],
+  "인구밀집지역": [
+    {
+      "AREA_CD": "POI013",
+      "AREA_NM": "가산디지털단지역",
+      "ENG_NM": "Gasan Digital Complex station",
+      "trdarCd": "3110723"
+    },
+    {
+      "AREA_CD": "POI014",
+      "AREA_NM": "강남역",
+      "ENG_NM": "Gangnam station",
+      "trdarCd": "3120189"
+    },
+    {
+      "AREA_CD": "POI015",
+      "AREA_NM": "건대입구역",
+      "ENG_NM": "Konkuk University station",
+      "trdarCd": "3110140"
+    },
+    {
+      "AREA_CD": "POI016",
+      "AREA_NM": "고덕역",
+      "ENG_NM": "Godeok station",
+      "trdarCd": "3120249"
+    },
+    {
+      "AREA_CD": "POI017",
+      "AREA_NM": "고속터미널역",
+      "ENG_NM": "Express Bus Terminal station",
+      "trdarCd": "3120167"
+    },
+    {
+      "AREA_CD": "POI018",
+      "AREA_NM": "교대역",
+      "ENG_NM": "Seoul National University of Education station",
+      "trdarCd": "3120173"
+    },
+    {
+      "AREA_CD": "POI019",
+      "AREA_NM": "구로디지털단지역",
+      "ENG_NM": "Guro Digital Complex station",
+      "trdarCd": "3120130"
+    },
+    {
+      "AREA_CD": "POI020",
+      "AREA_NM": "구로역",
+      "ENG_NM": "Guro station",
+      "trdarCd": "3120125"
+    },
+    {
+      "AREA_CD": "POI021",
+      "AREA_NM": "군자역",
+      "ENG_NM": "Gunja station",
+      "trdarCd": "3120055"
+    },
+    {
+      "AREA_CD": "POI022",
+      "AREA_NM": "남구로역",
+      "ENG_NM": "Namguro station",
+      "trdarCd": "3110710"
+    },
+    {
+      "AREA_CD": "POI023",
+      "AREA_NM": "대림역",
+      "ENG_NM": "Daerim station",
+      "trdarCd": "3120142"
+    },
+    {
+      "AREA_CD": "POI024",
+      "AREA_NM": "동대문역",
+      "ENG_NM": "Dongdaemun station",
+      "trdarCd": "3110030"
+    },
+    {
+      "AREA_CD": "POI025",
+      "AREA_NM": "뚝섬역",
+      "ENG_NM": "Ttukseom station",
+      "trdarCd": "3120051"
+    },
+    {
+      "AREA_CD": "POI026",
+      "AREA_NM": "미아사거리역",
+      "ENG_NM": "Miasageori station",
+      "trdarCd": "3120078"
+    },
+    {
+      "AREA_CD": "POI027",
+      "AREA_NM": "발산역",
+      "ENG_NM": "Balsan station",
+      "trdarCd": "3120119"
+    },
+    {
+      "AREA_CD": "POI028",
+      "AREA_NM": "북한산우이역",
+      "ENG_NM": "Bukhansan Ui station",
+      "trdarCd": "3110341"
+    },
+    {
+      "AREA_CD": "POI029",
+      "AREA_NM": "사당역",
+      "ENG_NM": "Sadang station",
+      "trdarCd": "3120160"
+    },
+    {
+      "AREA_CD": "POI030",
+      "AREA_NM": "삼각지역",
+      "ENG_NM": "Samgakji station",
+      "trdarCd": "3120044"
+    },
+    {
+      "AREA_CD": "POI031",
+      "AREA_NM": "서울대입구역",
+      "ENG_NM": "Seoul National University station",
+      "trdarCd": "3120159"
+    },
+    {
+      "AREA_CD": "POI032",
+      "AREA_NM": "서울식물원·마곡나루역",
+      "ENG_NM": "Seoul Botanic Park·Magongnaru station",
+      "trdarCd": "3120118"
+    },
+    {
+      "AREA_CD": "POI033",
+      "AREA_NM": "서울역",
+      "ENG_NM": "Seoul station",
+      "trdarCd": "3120043"
+    },
+    {
+      "AREA_CD": "POI034",
+      "AREA_NM": "선릉역",
+      "ENG_NM": "Seolleung station",
+      "trdarCd": "3120210"
+    },
+    {
+      "AREA_CD": "POI035",
+      "AREA_NM": "성신여대입구역",
+      "ENG_NM": "Sungshin Women's University station",
+      "trdarCd": "3110303"
+    },
+    {
+      "AREA_CD": "POI036",
+      "AREA_NM": "수유역",
+      "ENG_NM": "Suyu station",
+      "trdarCd": "3120076"
+    },
+    {
+      "AREA_CD": "POI037",
+      "AREA_NM": "신논현역·논현역",
+      "ENG_NM": "Sinnonhyeon·Nonhyeon station"
+    },
+    {
+      "AREA_CD": "POI038",
+      "AREA_NM": "신도림역",
+      "ENG_NM": "Sindorim station",
+      "trdarCd": "3120187"
+    },
+    {
+      "AREA_CD": "POI039",
+      "AREA_NM": "신림역",
+      "ENG_NM": "Sillim station",
+      "trdarCd": "3120157"
+    },
+    {
+      "AREA_CD": "POI040",
+      "AREA_NM": "신촌·이대역",
+      "ENG_NM": "Sinchon·Ewha Womans University station",
+      "trdarCd": "3120094"
+    },
+    {
+      "AREA_CD": "POI041",
+      "AREA_NM": "양재역",
+      "ENG_NM": "Yangjae station",
+      "trdarCd": "3120179"
+    },
+    {
+      "AREA_CD": "POI042",
+      "AREA_NM": "역삼역",
+      "ENG_NM": "Yeoksam station",
+      "trdarCd": "3120197"
+    },
+    {
+      "AREA_CD": "POI043",
+      "AREA_NM": "연신내역",
+      "ENG_NM": "Yeonsinnae station",
+      "trdarCd": "3120090"
+    },
+    {
+      "AREA_CD": "POI044",
+      "AREA_NM": "오목교역·목동운동장",
+      "ENG_NM": "Omokgyo·Mok-dong Stadium station",
+      "trdarCd": "3120113"
+    },
+    {
+      "AREA_CD": "POI045",
+      "AREA_NM": "왕십리역",
+      "ENG_NM": "Wangsimni station",
+      "trdarCd": "3120049"
+    },
+    {
+      "AREA_CD": "POI046",
+      "AREA_NM": "용산역",
+      "ENG_NM": "Yongsan station",
+      "trdarCd": "3120040"
+    },
+    {
+      "AREA_CD": "POI047",
+      "AREA_NM": "이태원역",
+      "ENG_NM": "Itaewon station",
+      "trdarCd": "3120046"
+    },
+    {
+      "AREA_CD": "POI048",
+      "AREA_NM": "장지역",
+      "ENG_NM": "Jangji station",
+      "trdarCd": "3120236"
+    },
+    {
+      "AREA_CD": "POI049",
+      "AREA_NM": "장한평역",
+      "ENG_NM": "Janghanpyeong station",
+      "trdarCd": "3120066"
+    },
+    {
+      "AREA_CD": "POI050",
+      "AREA_NM": "천호역",
+      "ENG_NM": "Cheonho station",
+      "trdarCd": "3120243"
+    },
+    {
+      "AREA_CD": "POI051",
+      "AREA_NM": "총신대입구(이수)역",
+      "ENG_NM": "Chongshin University(Isu) station",
+      "trdarCd": "3120156"
+    },
+    {
+      "AREA_CD": "POI052",
+      "AREA_NM": "충정로역",
+      "ENG_NM": "Chungjeongno station",
+      "trdarCd": "3120097"
+    },
+    {
+      "AREA_CD": "POI053",
+      "AREA_NM": "합정역",
+      "ENG_NM": "Hapjeong station",
+      "trdarCd": "3120101"
+    },
+    {
+      "AREA_CD": "POI054",
+      "AREA_NM": "혜화역",
+      "ENG_NM": "Hyehwa station",
+      "trdarCd": "3120012"
+    },
+    {
+      "AREA_CD": "POI055",
+      "AREA_NM": "홍대입구역(2호선)",
+      "ENG_NM": "Hongik University station(Line 2)",
+      "trdarCd": "3120103"
+    },
+    {
+      "AREA_CD": "POI056",
+      "AREA_NM": "회기역",
+      "ENG_NM": "Hoegi station",
+      "trdarCd": "3120065"
+    }
+  ]
+}

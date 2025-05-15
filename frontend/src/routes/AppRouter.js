@@ -7,6 +7,7 @@ import News from '../screens/SmallBusinessNews';
 import LoginPage from '../screens/LoginPage';
 import BoardPage from '../screens/BoardPage';
 import PostDetail from '../screens/PostDetail';
+import SummaryWithDetailScreen from '../screens/SummaryWithDetailScreen';
 
 const AppRouter = () => {
   const token = localStorage.getItem('token');
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route path="/" element={<StartScreen />} />
         <Route path="/pchome" element={<PcHomeScreen />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/SummaryWithDetailScreen" element={<SummaryWithDetailScreen />} />
         <Route path="/news" element={<News />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/board" element={token ? <BoardPage /> : <Navigate to="/login" />} />

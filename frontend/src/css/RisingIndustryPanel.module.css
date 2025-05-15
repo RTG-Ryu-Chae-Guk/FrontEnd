@@ -1,0 +1,201 @@
+/*RisingIndustryPanel.module.css*/
+.panel {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 380px;         /* ✅ 고정 너비 */
+  flex-shrink: 0;       /* ✅ 줄 바꿈 방지 */
+  margin: 1rem;
+  color: #1a1a1a;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.header .icon {
+  font-size: 2rem;
+  color: #1A4FCE;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1A4FCE;
+}
+
+.header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.industryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.industryList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.rank {
+  background-color: #1A4FCE;
+  color: white;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+.name {
+  flex: 1;
+  font-weight: 500;
+}
+.risingLoader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.loadingText {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ddd;
+  border-top: 6px solid #1A4FCE;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* RisingIndustryPanel.module.css */
+
+.headerBar {
+  background-color: #1A4FCE;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.headerBar h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.headerBar p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.sectionTabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  background: #f0f2f5;
+  color: #1A4FCE;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #d6dce8;
+}
+
+.tab.active {
+  background: #e0ebff;
+  border: 1px solid #1A4FCE;
+}
+
+.sectionCard {
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.industryItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.95rem;
+}
+
+.percentage {
+  color: #1A4FCE;
+  font-weight: 600;
+}
+.nameColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.subInfo {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}

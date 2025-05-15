@@ -16,7 +16,8 @@ const Header = () => {
       <img src={logo} alt="logo" className="pc-home-logo" />
       <nav className="pc-home-nav">
         <a href="/pchome">HOME</a>
-        <a href="/news">NEWS</a>
+        <a href="/news">AI BOT</a>
+        <a href="/SummaryWithDetailScreen">INFORMATION</a>
         <a href={token ? "/board" : "/login"}>COMMUNITY</a>
         <a href="/map">MAP</a>
         {token && (

@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import { IoStorefrontOutline, IoWalkOutline, IoBarChartOutline, IoSparklesOutline } from 'react-icons/io5';
+// components/Map/Sidebar.js
+import React from 'react';
 import styles from '../../css/Sidebar.module.css';
+import { IoStorefrontOutline, IoBarChartOutline, IoPlayCircleOutline, IoMedalOutline } from 'react-icons/io5';
 
-const Sidebar = () => {
-  const [activeMenu, setActiveMenu] = useState('점포수');
-
+const Sidebar = ({ activeMenu, setActiveMenu }) => {
   const menuItems = [
-    { icon: <IoStorefrontOutline />, label: '점포수' },
-    { icon: <IoWalkOutline />, label: '유동인구' },
-    { icon: <IoBarChartOutline />, label: '뜨는업종' },
-    { icon: <IoSparklesOutline />, label: 'AI추천' },
+    { icon: <IoStorefrontOutline />, label: '상권분석' },
+    { icon: <IoBarChartOutline />, label: '유동인구' },
+    { icon: <IoMedalOutline />, label: '뜨는업종' },
+    { icon: <IoPlayCircleOutline />, label: '영상컨텐츠' },
   ];
 
   return (
@@ -29,3 +28,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+

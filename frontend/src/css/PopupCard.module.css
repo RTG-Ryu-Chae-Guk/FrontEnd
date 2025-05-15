@@ -1,0 +1,101 @@
+/* PopupCard.module.css */
+
+.popupCard {
+  position: absolute;
+  top: 6%;
+  left: 30%;
+  width: 840px;
+  height: 780px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  z-index: 200;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popupContentWrapper {
+  display: flex;
+  height: 100%;
+}
+
+.popupContent {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background: #fefeff;
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.7rem;
+}
+
+.popupHeader h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.category {
+  color: #777;
+  font-size: 0.95rem;
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+.closeIcon {
+  font-size: 1.7rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.closeIcon:hover {
+  color: #444;
+}
+
+.popupSection h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #126ffe;
+}
+
+.popupSection p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.statList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.statList li {
+  margin-bottom: 0.4rem;
+}
+
+.strong {
+  font-weight: bold;
+  color: #126ffe;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

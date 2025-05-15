@@ -39,3 +39,21 @@
   font-size: 1.2rem;
   color: #999;
 }
+.downloadBtn {
+  margin: 1rem 1rem 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.downloadBtn:hover {
+  background-color: #0e5ed1;
+}

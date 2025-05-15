@@ -1,89 +1,373 @@
-.newsPageWrapper {
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #1A4FCE, #5599F1);
-  display: flex;
-  flex-direction: column; /* 핵심 */
-  padding-bottom: 3rem;
-}
-
-.newsPage {
- margin: 5rem auto 0; /* ✅ 수평 가운데 정렬 */
+.chat-container {
   width: 100%;
-  max-width: 960px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 3rem 2rem;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-  color: #1f1f1f;
-  animation: fadeIn 0.5s ease-in-out;
+  height: 100vh;
+  background: #fff;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.title {
-  font-size: 2.4rem;
-  font-weight: 900;
-  color: #fff;
+.chatContainer {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-  background: linear-gradient(to right, #ffffff, #d6e0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  font-family: 'Pretendard', sans-serif;
 }
 
-.newsList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.chatWindowWrapper {
+  width: 100%;
+  max-width: 768px;
+  height: 80vh;
+  background: #fff;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
-.newsItem {
-  background: #ffffffee;
-  padding: 1.6rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  transform: translateY(0);
+.chatWindow {
+  flex-grow: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
-.newsItem:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+.chatBubble {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
-.newsLink {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+.chatBubble.user {
+  justify-content: flex-end;
 }
 
-.newsLink h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
+.chatBubble.user .chatContent {
+  background: #DCF8C6;
+  color: #000;
+  align-items: flex-end;
+}
+
+.chatBubble.bot {
+  justify-content: flex-start;
+}
+
+.chatBubble.bot .chatContent {
+  background: #f0f2f6;
+  color: #000;
+  align-items: flex-start;
+}
+
+.avatar {
+  margin-right: 0.6rem;
+  margin-top: 0.2rem;
   color: #1A4FCE;
 }
 
-.desc {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 0.8rem;
+.chatContent {
+  max-width: 75%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
 }
 
-.date {
+.chatText {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.typingEffect {
+  font-style: italic;
+  color: #666;
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.hashtag {
+  background: #e1eaff;
+  color: #1A4FCE;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: #1A4FCE;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.2);
+}
+
+/* 뉴스 요약 */
+.newsLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.newsText {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.newsDesc {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0.4rem 0 0.6rem;
+  line-height: 1.6;
+}
+
+.newsDate {
   font-size: 0.85rem;
   color: #999;
-  font-style: italic;
-  text-align: right;
-  display: block;
 }
+
+.newsNav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  align-items: center;
+}
+
+.newsNav button {
+  background-color: #1A4FCE;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.newsNav span {
+  font-size: 0.9rem;
+  color: #1A4FCE;
+  font-weight: 600;
+}
+
+/* 입력창 영역 고정 */
+.controlsAreaFixed {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.toggleNewsBtn {
+  align-self: flex-end;
+  background-color: #1A4FCE;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.toggleNewsBtn:hover {
+  background-color: #143cad;
+}
+
+.inputArea {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.inputArea input {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+
+.inputArea button {
+  background-color: #1A4FCE;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.inputArea button:hover {
+  background-color: #143cad;
+}
+
+/* 스크롤바 스타일 */
+.chatWindow::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatWindow::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 10px;
+}
+
+.chatWindow::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.avatarTyping {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.tabContainer {
+  background-color: #eef2fa;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tabContent p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1A4FCE;
+}
+
+.tabContent input {
+  padding: 0.6rem 0.2rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.tabContent input:focus {
+  border-color: #1A4FCE;
+  box-shadow: 0 0 0 2px rgba(26, 79, 206, 0.1);
+}
+
+.tabContent button {
+  background-color: #1A4FCE;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.tabContent button:hover {
+  background-color: #143cad;
+}
+.iconButton {
+  background: none;
+  border: none;
+  color: #1A4FCE;
+  margin-right: 0.5rem;
+}
+.iconButton:hover {
+  transform: scale(1.1);
+}
+
+.analysisButtonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개씩 */
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.analysisButtonGrid button {
+  background-color: #f0f4ff;
+  border: 2px solid #1A4FCE;
+  color: #1A4FCE;
+  padding: 0.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.analysisButtonGrid button:hover {
+  background-color: #1A4FCE;
+  color: white;
+}
+
+.submitButton {
+  background-color: white;
+  color: #1A4FCE;
+  border: 2px solid #1A4FCE;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #1A4FCE;
+  color: white;
+}
+
+.footer {
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background: white;
+  height: 200px;
+  z-index: -1;
+}
+
+
