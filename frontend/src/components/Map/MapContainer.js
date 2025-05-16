@@ -7,6 +7,7 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { IoTrashSharp, IoLocation, IoLocationOutline } from 'react-icons/io5';
 import RisingIndustryPanel from './RisingIndustryPanel';
+import Hls from 'hls.js';
 
 const MapContainer = forwardRef(({ onMarkerClick, selectedRegion, showPolygons, activeMenu, setRegion: setGlobalRegion }, ref) => {
   const mapRef = useRef(null);
@@ -24,12 +25,151 @@ const MapContainer = forwardRef(({ onMarkerClick, selectedRegion, showPolygons, 
   const activeMenuRef = useRef(activeMenu);
   const [areaCodes, setAreaCodes] = useState([]);
   const [risingLoading, setRisingLoading] = useState(false);
+  const [cctvMarkers, setCctvMarkers] = useState([]);
+  const [cctvStreamUrl, setCctvStreamUrl] = useState('');
+  const videoRef = useRef(null);
+  const [realEstateData, setRealEstateData] = useState([]);
+  const [realEstateMarkers, setRealEstateMarkers] = useState([]);
+  const [selectedDealRegion, setSelectedDealRegion] = useState(null);
+  const [sggCenters, setSggCenters] = useState([]);
+  const [realEstateCircles, setRealEstateCircles] = useState([]);
+  const [realEstateLabels, setRealEstateLabels] = useState([]); // ✅ 1. 상태 추가
+
 
     useEffect(() => {
       fetch('/data/seoul_area_codes.json')
         .then(res => res.json())
         .then(setAreaCodes);
     }, []);
+
+    useEffect(() => {
+      fetch('/data/seoul_sgg_centers.json')
+        .then(res => res.json())
+        .then(setSggCenters);
+    }, []);
+
+      useEffect(() => {
+         realEstateMarkers.forEach(marker => marker.setMap(null));
+         realEstateCircles.forEach(circle => circle.setMap(null));
+         realEstateLabels.forEach(label => label.setMap(null));
+         setRealEstateMarkers([]);
+         setRealEstateCircles([]);
+         setRealEstateLabels([]);
+         setSelectedDealRegion(null);
+
+         if (activeMenu !== '실거래가' || !mapInstance) return;
+
+         fetch('/api/realestate')
+           .then(res => res.json())
+           .then(data => {
+             setRealEstateData(data);
+
+             const grouped = {};
+             data.forEach(item => {
+               if (!grouped[item.sgg_nm]) grouped[item.sgg_nm] = [];
+               grouped[item.sgg_nm].push(item);
+             });
+
+             const markers = [];
+             const circles = [];
+             const labels = [];
+
+             Object.entries(grouped).forEach(([sgg_nm, items]) => {
+               const center = sggCenters.find(c => c.sgg_nm === sgg_nm);
+               if (!center) return;
+
+               const position = new kakao.maps.LatLng(center.lat, center.lng);
+
+               const circle = new kakao.maps.Circle({
+                 center: position,
+                 radius: 2500, // 🔵 반경 더 확대
+                 strokeWeight: 2,
+                 strokeColor: 'red',
+                 strokeOpacity: 0.9,
+                 fillColor: 'red',
+                 fillOpacity: 0.25
+               });
+
+               circle.setMap(mapInstance);
+
+               // 🔵 오버레이에 구 이름 표시
+               const label = new kakao.maps.CustomOverlay({
+                 position: position,
+                 content: `<div style="
+                   padding:6px 12px;
+                   color:white;
+                   border-radius:8px;
+                   font-size:13px;
+                   font-weight:bold;
+                   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+                 ">${sgg_nm}</div>`,
+                 yAnchor: 0.5
+               });
+               label.setMap(mapInstance);
+               labels.push(label);
+
+               kakao.maps.event.addListener(circle, 'click', () => {
+                 setSelectedDealRegion({ name: sgg_nm, deals: items });
+               });
+
+               circles.push(circle);
+             });
+
+             setRealEstateCircles(circles);
+             setRealEstateLabels(labels);
+           });
+       }, [activeMenu, mapInstance, sggCenters]);
+
+
+    useEffect(() => {
+      if (!region?.streamUrl || !videoRef.current) return;
+
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(region.streamUrl);
+        hls.attachMedia(videoRef.current);
+        return () => {
+          hls.destroy();
+        };
+      } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
+        videoRef.current.src = region.streamUrl;
+      }
+    }, [region?.streamUrl]);
+
+
+  useEffect(() => {
+    // CCTV 마커 제거
+    cctvMarkers.forEach(marker => marker.setMap(null));
+    setCctvMarkers([]);
+
+    if (activeMenu === 'CCTV' && mapInstance) {
+      fetch('/api/cctvs')
+        .then(res => res.json())
+        .then(data => {
+          const newMarkers = data.map((cctv) => {
+            const marker = new kakao.maps.Marker({
+              position: new kakao.maps.LatLng(cctv.coord_y, cctv.coord_x),
+              map: mapInstance,
+              title: cctv.name
+            });
+
+            kakao.maps.event.addListener(marker, 'click', () => {
+              // 클릭 시 .m3u8 스트리밍 오버레이 띄우기
+              setRegion({
+                type: 'cctv',
+                name: cctv.name,
+                streamUrl: cctv.url
+              });
+            });
+
+            return marker;
+          });
+
+          setCctvMarkers(newMarkers);
+        });
+    }
+  }, [activeMenu, mapInstance]);
+
 
   useImperativeHandle(ref, () => ({
     selectRegionByName(name) {
@@ -449,6 +589,43 @@ const MapContainer = forwardRef(({ onMarkerClick, selectedRegion, showPolygons, 
         {region && region.type !== 'rising' && activeMenu === '상권분석' && (
           <PopupCard region={region} onClose={() => setRegion(null)} />
         )}
+
+        {region?.type === 'cctv' && (
+          <div className={styles.cctvOverlay}>
+            <div className={styles.cctvOverlayContent}>
+              <h3>{region.name}</h3>
+              <video ref={videoRef} controls autoPlay muted style={{ width: '100%', borderRadius: '8px' }} />
+              <button className={styles.closeBtn} onClick={() => setRegion(null)}>닫기</button>
+            </div>
+          </div>
+        )}
+
+        {selectedDealRegion && activeMenu === '실거래가' && (
+          <div className={styles.dealOverlay}>
+            <div className={styles.dealOverlayContent}>
+              <h3>{selectedDealRegion.name} 실거래 목록</h3>
+             <ul className={styles.dealList}>
+               {selectedDealRegion.deals.map((deal, idx) => (
+                 <li key={idx}>
+                   <div className={styles.dealDate}>
+                     📅 {deal.deal_year}.{deal.deal_month}.{deal.deal_day}
+                   </div>
+                   <div className={styles.dealInfo}>
+                     🏢 {deal.building_use} | 💰 {deal.deal_amount}만 원
+                   </div>
+                   <div className={styles.dealMeta}>
+                     👤 {deal.buyer_gbn} | 📍 {deal.land_use}
+                   </div>
+                 </li>
+               ))}
+             </ul>
+
+              <button className={styles.closeBtn} onClick={() => setSelectedDealRegion(null)}>닫기</button>
+            </div>
+          </div>
+        )}
+
+
 
       </div>
     );

@@ -49,7 +49,7 @@ const RisingIndustryPanel = ({ areaName, industries }) => {
               <div className={styles.nameColumn}>
                 <span className={styles.name}>{item.name}</span>
                 <span className={styles.subInfo}>점포 수: {item.storeCo}개 · 폐업률: {item.closeRt}%</span>
-              </div>
+              </div>cd
             </li>
           ))}
         </ul>
